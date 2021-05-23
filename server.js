@@ -1,10 +1,10 @@
 const express = require("express");
 const { user, todolist, todoitem, tag, itemtag } = require("./models");
-// const cors = require("cors");
-const PORT = 4001;
+const cors = require("cors");
+const PORT = process.env.PORT || 4000;
 const app = express();
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 
 app.get("/users", async (req, res) => {
   try {
